@@ -49,7 +49,7 @@ This project is a complete implementation of the **RAGAs** paper for automated e
 ### 1️⃣ Clone the repository
 
 ```bash
-git clone https://github.com/yourusername/ragas-gapgpt.git
+git clone https://github.com/SahandRezakhani/ragas-gapgpt.git
 cd ragas-gapgpt
 ```
 
@@ -61,36 +61,13 @@ pip install -r requirements.txt
 
 ### 3️⃣ Set your API key
 
+Make a .env file in root directory and place code below in it:
+
 ```bash
-export GAPGPT_API_KEY="your-api-key-here"
-```
-
-For Windows:
-
-```cmd
-set GAPGPT_API_KEY=your-api-key-here
-```
-
----
-
-## 🚀 Quick Start
-
-```python
-from ragas_evaluator import RAGASEvaluator
-
-# Sample data
-data = {
-    "question": "What is Python?",
-    "answer": "Python is a high-level programming language.",
-    "contexts": ["Python is an interpreted, object-oriented programming language."]
-}
-
-# Evaluate
-evaluator = RAGASEvaluator(model_name="gpt-4o")
-results = evaluator.evaluate(data)
-
-print(results)
-# Output: {'faithfulness': 0.95, 'answer_relevancy': 0.92, 'context_relevancy': 0.88}
+GAPGPT_API_KEY=GapGPT-API-Key
+GAPGPT_BASE_URL=https://api.gapgpt.app/v1
+DEFAULT_MODEL=gpt-4o
+EMBEDDING_MODEL=text-embedding-3-small
 ```
 
 ---
