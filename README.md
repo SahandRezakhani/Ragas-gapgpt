@@ -26,7 +26,6 @@ This project is a complete implementation of the **RAGAs** paper for automated e
 ```diff
 + ✅ No VPN required
 + ✅ Reference-free evaluation
-+ ✅ JSON output for reproducibility
 + ✅ Multi-model support
 ```
 
