@@ -1,38 +1,35 @@
-"""
-RAGAs - Automated Evaluation of Retrieval Augmented Generation
-Implementation based on the paper: "RAGAs: Automated Evaluation of Retrieval Augmented Generation"
-arXiv:2309.15217
-
-License: MIT
-"""
-
 import os
 import sys
 from dotenv import load_dotenv
-
-# Load environment variables from .env file
+from rich import print
 load_dotenv()
 
 def main():
-    # Check if API key is set
     api_key = os.getenv("GAPGPT_API_KEY")
     if not api_key:
         print("❌ Error: GAPGPT_API_KEY environment variable is not set.")
         print("Please create a .env file with: GAPGPT_API_KEY=your_key_here")
         sys.exit(1)
 
-    print("✅ API key found. Running evaluation examples...\n")
+    print("\n[bold green blink2]API key found. Running evaluation examples...[/]\n")
 
     # Import and run the simple evaluation example
-    print("=" * 60)
-    print("1. Running Simple Evaluation Example")
-    print("=" * 60)
-    import examples.simple_evaluation
+    print("[bold cyan]=[/]" * 60)
+    print("[bold red blink2]1. Running 'example1' for evaluate Faithfulness[/]")
+    print("[bold cyan]=[/]" * 60)
+    import examples.example1
+    print()
 
-    print("\n" + "=" * 60)
-    print("2. Running WikiEval Demo Example")
-    print("=" * 60)
-    import examples.wikeval_demo
+    print("[bold cyan]=[/]" * 60)
+    print("[bold red blink2]1. Running 'example2' for evaluate Faithfulness[/]")
+    print("[bold cyan]=[/]" * 60)
+    import examples.example2
+    print()
+
+    print("[bold cyan]=[/]" * 60)
+    print("[bold red blink2]1. Running 'example3' for evaluate Faithfulness[/]")
+    print("[bold cyan]=[/]" * 60)
+    import examples.example3
 
 if __name__ == "__main__":
     main()

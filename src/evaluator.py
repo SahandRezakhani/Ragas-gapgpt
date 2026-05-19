@@ -38,7 +38,7 @@ class RAGASEvaluator:
         self,
         question: str,
         answer: str,
-        context: str,
+        context: Optional[str] = None,
         answer_relevancy_n: int = 3
     ) -> RAGASResult:
         """
