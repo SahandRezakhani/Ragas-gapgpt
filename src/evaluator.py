@@ -28,8 +28,6 @@ class RAGASEvaluator:
         self.client = OpenAI(api_key=api_key, base_url=base_url)
         self.llm_model = llm_model
         self.embedding_model = embedding_model
-
-        # Create metric instances
         self.faithfulness = FaithfulnessMetric(self.client, llm_model)
         self.answer_relevancy = AnswerRelevancyMetric(self.client, llm_model, embedding_model)
         self.context_relevancy = ContextRelevancyMetric(self.client, llm_model)

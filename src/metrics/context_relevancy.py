@@ -34,10 +34,7 @@ Relevant sentences:
         content = response.choices[0].message.content.strip()
         if "Insufficient Information" in content:
             return []
-        # Extract non-empty lines
         lines = [line.strip() for line in content.split('\n') if line.strip()]
-        # Remove lines that may contain extra explanations (but the paper says to return only sentences)
-        # Simple: return the lines as is
         return lines
 
     def compute(self, question: str, context: str) -> float:
@@ -49,8 +46,5 @@ Relevant sentences:
         if total == 0:
             return 0.0
         relevant_sentences = self._extract_relevant_sentences(question, context)
-        # Remove duplicates (because the LLM might write the same sentence multiple times)
         unique_relevant = set(relevant_sentences)
-        # Match with original sentences (to ensure sentences exist exactly in the context)
-        # If needed, fuzzy matching can be done, but the paper assumes the LLM extracts sentences verbatim
         return len(unique_relevant) / total

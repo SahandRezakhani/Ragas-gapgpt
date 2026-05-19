@@ -59,7 +59,6 @@ Statement: {statement}
         verdict_json = extract_json_from_response(content)
         if verdict_json and "verdict" in verdict_json:
             return verdict_json["verdict"].lower() == "yes"
-        # Fallback: search for Yes/No word
         return "yes" in content.lower()
 
     def compute(self, question: str, answer: str, context: str) -> float:

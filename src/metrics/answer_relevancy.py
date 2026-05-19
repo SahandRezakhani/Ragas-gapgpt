@@ -44,7 +44,6 @@ Questions:
         )
         content = response.choices[0].message.content.strip()
         lines = [line.strip() for line in content.split('\n') if line.strip() and not line.lower().startswith("questions")]
-        # Sometimes the model may generate fewer than n questions
         return lines[:n] if lines else []
 
     def compute(self, question: str, answer: str, n: int = 3) -> float:
