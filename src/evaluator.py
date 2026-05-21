@@ -21,9 +21,9 @@ class RAGASEvaluator:
     def __init__(
         self,
         api_key: str,
-        base_url: str = "https://api.gapgpt.app/v1",
-        llm_model: str = "gpt-4o",
-        embedding_model: str = "text-embedding-3-small"
+        base_url: str,
+        llm_model: str,
+        embedding_model: str
     ):
         self.client = OpenAI(api_key=api_key, base_url=base_url)
         self.llm_model = llm_model
